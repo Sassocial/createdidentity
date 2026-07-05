@@ -1,4 +1,3 @@
-import IdentityPrompt from "../components/dashboard/IdentityPrompt";\
 import AppLayout from "../../components/layout/AppLayout";
 import WorkspaceHero from "../../components/workspace/WorkspaceHero";
 import WorkspaceStat from "../../components/workspace/WorkspaceStat";
