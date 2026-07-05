@@ -2,26 +2,36 @@
 
 import { useState } from "react";
 
-import WizardStep1 from "./WizardStep1";
-import WizardStep2 from "./WizardStep2";
+import WizardStep1 from "./WizardStep1.js";
+import WizardStep2 from "./WizardStep2.js";
 import WizardStep3 from "./WizardStep3";
-import WizardStep4 from "./WizardStep4";
-import WizardStep5 from "./WizardStep5";
+
+import { WorkspaceWizardData } from "../../types/workspaceWizard";
 
 export default function WorkspaceWizard() {
   const [step, setStep] = useState(1);
 
-  const [workspace, setWorkspace] = useState({
+  const [workspace, setWorkspace] = useState<WorkspaceWizardData>({
     name: "",
     industry: "",
+
     instagram: "",
+    facebook: "",
+    tiktok: "",
+    linkedin: "",
+
     website: "",
+
     audience: "",
     tone: "",
+
+    colours: "",
+    competitors: "",
+    goals: "",
   });
 
   function next() {
-    setStep((current) => Math.min(current + 1, 5));
+    setStep((current) => Math.min(current + 1, 3));
   }
 
   function back() {
@@ -38,15 +48,14 @@ export default function WorkspaceWizard() {
   switch (step) {
     case 1:
       return <WizardStep1 {...props} />;
+
     case 2:
       return <WizardStep2 {...props} />;
+
     case 3:
       return <WizardStep3 {...props} />;
-    case 4:
-      return <WizardStep4 {...props} />;
-    case 5:
-      return <WizardStep5 {...props} />;
+
     default:
-      return null;
+      return <WizardStep1 {...props} />;
   }
 }
