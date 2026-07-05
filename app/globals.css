@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+:root{
+
+--background:#E6DDD3;
+
+--card:#F5F1EB;
+
+--text:#2E2925;
+
+--muted:#847B72;
+
+--button:#5D5047;
+
+}
+
+html{
+
+background:var(--background);
+
+}
+
+body {
+  background-color: #F4EFE8;
+  background-image:
+    radial-gradient(rgba(255,255,255,0.35) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
